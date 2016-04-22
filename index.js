@@ -31,10 +31,12 @@ class App extends React.Component {
     const maybeTooltip = range ? <Tooltip range={range} offsetTop={-20} onNewText={this._onNewText} highlightedText={range.toString()}/> : null;
 
     return (
-      <div>
+      <div className="main-content">
         <h1 style={{marginTop: '300px'}}>Proofread this</h1>
         <p id="content" className="edit-text" onMouseUp={this._onTextSelected.bind(this)}>
-          Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning.
+          Determining an ideal number of characters per line and accompanying line space is a subject of much debate. While some suggest that 45-75 characters per line is the ideal length, other studies show that longer line lengths can result in faster reading speeds. Even though people may read longer lines more quickly, readers report that they actually prefer shorter line lengths.
+          <br /><br />
+          Perhaps there really is an ideal number of characters per line and we simply haven’t found it yet (or at least agreed on it), but it’s almost assuredly related to other properties such as line spacing. Line spacing (leading), or line height, determines the height of a line of text. A taller line height means more space between lines.
         </p>
         { maybeTooltip }
       </div>
