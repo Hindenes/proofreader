@@ -28,7 +28,7 @@ class App extends React.Component {
 
   render() {
     const { range } = this.state;
-    const maybeTooltip = range ? <Tooltip range={range} offsetTop={-20} onNewText={this._onNewText}/> : null;
+    const maybeTooltip = range ? <Tooltip range={range} offsetTop={-20} onNewText={this._onNewText} highlightedText={range.toString()}/> : null;
 
     return (
       <div>

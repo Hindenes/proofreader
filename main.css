@@ -47,6 +47,10 @@
   background-color: #FFF9C4;
 }
 
+.text-highlighted {
+  background-color: #FFF9C4;
+}
+
 .text-deleted {
   background-color: #FFCDD2;
   border-radius: 5px;
@@ -62,5 +66,6 @@
 }
 
 .input {
-
+  width: 80%;
+  margin-bottom: 1rem;
 }

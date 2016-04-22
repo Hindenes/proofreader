@@ -22,7 +22,9 @@ class SuggestChange extends React.Component {
   render() {
     return (
       <div>
-        <p className="netto block-s">I suggest the text to be replaced by...</p>
+        <p className="netto block-s">I suggest the text:</p>
+        <p className="netto block-s"><span className="text-highlighted">{this.props.highlightedText}</span></p>
+        <p className="netto block-s">To be replaced by:</p>
         <input type="text" className="input" value={this.state.text} onChange={this._onTextChange}/>
         <button className="edit-action-btn single-action-btn" onClick={this._onFinishedEditing}>Suggest this change</button>
       </div>
@@ -31,7 +33,8 @@ class SuggestChange extends React.Component {
 }
 
 SuggestChange.propTypes = {
-  onNewText: React.PropTypes.func.isRequired
+  onNewText: React.PropTypes.func.isRequired,
+  highlightedText: React.PropTypes.string.isRequired
 }
 
 export default SuggestChange;

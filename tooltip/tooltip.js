@@ -24,7 +24,7 @@ class Tooltip extends React.Component {
   }
 
   render() {
-    const { range, offsetTop } = this.props;
+    const { range, offsetTop, onNewText, highlightedText } = this.props;
     const { top, left, width} = range.getBoundingClientRect();
     const position = {
       top: (top - 300 + offsetTop) + 'px',
@@ -33,7 +33,7 @@ class Tooltip extends React.Component {
 
     let compoent = {
       SELECT_ACTION: <SelectEditAction onSelectedAction={this._onSelectedAction}/>,
-      SUGGEST_CHANGE: <SuggestChange onNewText={this.props.onNewText}/>,
+      SUGGEST_CHANGE: <SuggestChange onNewText={onNewText} highlightedText={highlightedText}/>,
       COMMENT: <p>Comment</p>
     }
 
@@ -46,7 +46,8 @@ class Tooltip extends React.Component {
 }
 
 Tooltip.propTypes = {
-  onNewText: React.PropTypes.func.isRequired
+  onNewText: React.PropTypes.func.isRequired,
+  highlightedText: React.PropTypes.string.isRequired
 }
 
 export default Tooltip;
