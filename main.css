@@ -1,0 +1,40 @@
+.tooltip {
+  border: 1px solid black;
+  border-radius: 5px;
+  position: absolute;
+  padding: 1rem;
+  text-align: center;
+}
+
+.netto {
+  margin: 0;
+  padding: 0;
+}
+
+.block-s {
+  margin-bottom: 1rem;
+}
+
+.edit-action-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: .8rem;
+  border-radius: 3px;
+  border: 1px solid grey;
+}
+
+.edit-action-btn:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.single-action-btn {
+  color: white;
+  background-color: green;
+  border-color: green;
+}
+
+.input {
+
+}
