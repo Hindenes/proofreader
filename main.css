@@ -54,7 +54,7 @@
 .text-deleted {
   background-color: #FFCDD2;
   border-radius: 5px;
-  padding: 5px;
+  padding: 2px 5px;
   margin-right: 2px;
   text-decoration: line-through;
 }
@@ -62,7 +62,7 @@
 .text-added {
   background-color: #C8E6C9;
   border-radius: 5px;
-  padding: 5px;
+  padding: 2px 5px;
 }
 
 .input {
