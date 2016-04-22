@@ -35,6 +35,32 @@
   border-color: green;
 }
 
+.edit-text {
+  line-height: 1.5rem;
+}
+
+.edit-text::-moz-selection {
+  background-color: #FFF9C4;
+}
+
+.edit-text::selection {
+  background-color: #FFF9C4;
+}
+
+.text-deleted {
+  background-color: #FFCDD2;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 2px;
+  text-decoration: line-through;
+}
+
+.text-added {
+  background-color: #C8E6C9;
+  border-radius: 5px;
+  padding: 5px;
+}
+
 .input {
 
 }

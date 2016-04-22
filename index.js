@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Tooltip from './tooltip/tooltip';
-import replaceRange from './replace-highlighted-text';
+import { diffRange as replaceRange } from './replace-highlighted-text';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,9 +16,9 @@ class App extends React.Component {
     const text = range.toString();
     if (!text || text.trim() === '') {
       this.setState({ range: null });
+    } else {
+      this.setState({ range });
     }
-
-    this.setState({ range });
   }
 
   _onNewText(newText) {
@@ -33,7 +33,7 @@ class App extends React.Component {
     return (
       <div>
         <h1 style={{marginTop: '300px'}}>Proofread this</h1>
-        <p id="content" onMouseUp={this._onTextSelected.bind(this)}>
+        <p id="content" className="edit-text" onMouseUp={this._onTextSelected.bind(this)}>
           Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning. Her kommer teksten. Dette er en setning.
         </p>
         { maybeTooltip }
