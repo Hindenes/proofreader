@@ -46,6 +46,7 @@
 
 .edit-text {
   line-height: 1.5rem;
+  opacity: 0.87;
 }
 
 .edit-text::-moz-selection {
