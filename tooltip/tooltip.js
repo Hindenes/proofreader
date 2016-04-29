@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import SelectEditAction from './select-edit-action';
 import SuggestChange from './suggest-change';
 import { SUGGEST_CHANGE, COMMENT } from './tooltip-actions';
@@ -8,22 +9,21 @@ class Tooltip extends React.Component {
     super(props);
     this.state = {
       mode: 'SELECT_ACTION',
-      newText: null
+      newText: null,
+      hide: false
     };
 
     this._onSelectedAction = this._onSelectedAction.bind(this);
   }
 
   _onSelectedAction(action) {
-    console.log(action);
     this.setState({ mode: action });
   }
 
-  componentWillUnmount() {
-    console.log('unmount');
-  }
-
   render() {
+    if (this.state.hide) {
+      return null;
+    }
     const { range, offsetTop, onNewText, highlightedText } = this.props;
     const { top, left, width} = range.getBoundingClientRect();
     const position = {
@@ -38,7 +38,7 @@ class Tooltip extends React.Component {
     }
 
     return (
-      <div style={position} className="tooltip">
+      <div className="tooltip">
         { compoent[this.state.mode] }
       </div>
     );
