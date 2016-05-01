@@ -13,21 +13,29 @@ class SuggestChange extends React.Component {
     this.setState({ text: event.target.value });
   }
 
-  _onFinishedEditing() {
+  _onFinishedEditing(e) {
+    e.preventDefault();
     const { onNewText } = this.props;
-    console.log('onclick', this.state);
     onNewText(this.state.text);
   }
 
+  componentDidMount() {
+
+  }
+
   render() {
-    return (
+    const old = (
       <div>
         <p className="netto block-s">I suggest the text:</p>
         <p className="netto block-s"><span className="text-highlighted">{this.props.highlightedText}</span></p>
         <p className="netto block-s">To be replaced by:</p>
-        <input type="text" className="input" value={this.state.text} onChange={this._onTextChange}/>
-        <button className="edit-action-btn single-action-btn" onClick={this._onFinishedEditing}>Suggest this change</button>
       </div>
+    );
+    return (
+      <form>
+        <input type="text" autoFocus className="input" value={this.state.text} onChange={this._onTextChange}/>
+        <input type="submit" className="edit-action-btn single-action-btn" onClick={this._onFinishedEditing} value="Suggest this change"></input>
+      </form>
     );
   }
 }

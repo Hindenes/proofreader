@@ -65,7 +65,7 @@
 .text-deleted {
   background-color: #FFCDD2;
   border-radius: 5px;
-  padding: 2px 5px;
+  padding: 0 5px;
   margin-right: 2px;
   text-decoration: line-through;
 }
@@ -73,7 +73,39 @@
 .text-added {
   background-color: #C8E6C9;
   border-radius: 5px;
-  padding: 2px 5px;
+  padding: 0 5px;
+}
+
+.diff-container {
+  position: relative;
+}
+
+.revert-btn-container .revert-btn {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: -0.6rem;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.1rem 0.3rem;
+  font-size: .8rem;
+  border-radius: 3px;
+}
+
+.revert-btn-container:hover .revert-btn {
+  display: inline;
+}
+
+.revert-btn-container {
+  position: absolute;
+  top: -10px;
+  left: 0;
+
+  padding: 1rem 1rem 0 0;
+  width: 100%;
+  height: 100%;
 }
 
 .header-main {

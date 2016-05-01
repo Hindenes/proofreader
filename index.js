@@ -1,19 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Tooltip from './tooltip/tooltip';
-import { diffRange as replaceRange } from './replace-highlighted-text';
+import { diffRange as replaceRange, wrapRange } from './replace-highlighted-text';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { range: null };
+    this.state = { range: null, unwrappedRange: null };
 
     this._onNewText = this._onNewText.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
+  clearHighlightedText() {
+    const highlightedText = document.getElementsByClassName('text-highlighted');
+    Array.prototype.forEach.call(highlightedText, elem => elem.outerHTML = elem.innerHTML);
+  }
+
   _onTextSelected(e) {
-    setTimeout(()=> {
+    this.clearHighlightedText();
+    setTimeout(() => {
       const selection = window.getSelection();
       if(!selection || selection.rangeCount === 0) {
         this.setState({ range: null });
@@ -25,7 +31,8 @@ class App extends React.Component {
       if (!text || text.trim() === '') {
         this.setState({ range: null });
       } else {
-        this.setState({ range });
+        const unwrappedRange = wrapRange(range, 'span');
+        this.setState({ range, unwrappedRange });
       }
     }, 0);
   }
@@ -47,6 +54,7 @@ class App extends React.Component {
 
   _onNewText(newText) {
     replaceRange(this.state.range, newText);
+    this.clearHighlightedText();
     this.setState({ range: null });
   }
 

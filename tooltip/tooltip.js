@@ -39,7 +39,7 @@ class Tooltip extends React.Component {
 
     return (
       <div className="tooltip">
-        { compoent[this.state.mode] }
+        { compoent[SUGGEST_CHANGE] }
       </div>
     );
   }
