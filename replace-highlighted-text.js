@@ -70,16 +70,10 @@ export function diffRange(range, html) {
       }
   }
 
-  console.log(deletedFragment.children[0].children[0]);
-  console.log(deletedFragment.children[0].children[1]);
-
   Array.prototype.forEach.call(deletedFragment.children[0].children, elem => {
-    console.log('elem', elem);
     if(elem.classList.contains('text-added')) {
-      console.log('rm');
       elem.outerHTML = '';
     } else {
-      console.log('rm container');
       elem.outerHTML = elem.innerHTML;
     }
   });

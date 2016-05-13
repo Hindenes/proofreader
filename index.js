@@ -1,3 +1,5 @@
+require('file?name=[name].[ext]!./index.html');
+require('file?name=[name].[ext]!./main.css');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Tooltip from './tooltip/tooltip';
@@ -64,7 +66,7 @@ class App extends React.Component {
 
     return (
       <div className="main-content">
-        <h1 className="header-main">Proofread this</h1>
+        <h1 className="header-main">Highlight some text to start editing</h1>
         <p id="content" className="edit-text" onMouseUp={this._onTextSelected.bind(this)}>
           Your goal as a startup is to make something users love. If you do that, then you have to figure out how to get a lot more users. But this first part is critical—think about the really successful companies of today. They all started with a product that their early users loved so much they told other people about it. If you fail to do this, you will fail. If you deceive yourself and think your users love your product when they don’t, you will still fail.
           <br/><br/>

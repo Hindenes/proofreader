@@ -31,10 +31,12 @@ class SuggestChange extends React.Component {
         <p className="netto block-s">To be replaced by:</p>
       </div>
     );
+
+    const placeholder = 'Start typing and hit return when you’re done';
     return (
       <form>
-        <input type="text" autoFocus className="input" value={this.state.text} onChange={this._onTextChange}/>
-        <input type="submit" className="edit-action-btn single-action-btn" onClick={this._onFinishedEditing} value="Suggest this change"></input>
+        <input type="text" autoFocus placeholder={placeholder} className="input" value={this.state.text} onChange={this._onTextChange}/>
+        <input type="submit" style={{display: 'none'}} className="edit-action-btn single-action-btn" onClick={this._onFinishedEditing} value="Suggest this change"></input>
       </form>
     );
   }

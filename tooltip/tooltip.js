@@ -27,8 +27,8 @@ class Tooltip extends React.Component {
     const { range, offsetTop, onNewText, highlightedText } = this.props;
     const { top, left, width} = range.getBoundingClientRect();
     const position = {
-      top: (top - 300 + offsetTop) + 'px',
-      left: (left - 150 + width/2) + 'px'
+      top: (top - 58 + offsetTop) + 'px',
+      left: (left - 175 + width/2) + 'px'
     };
 
     let compoent = {
@@ -38,7 +38,7 @@ class Tooltip extends React.Component {
     }
 
     return (
-      <div className="tooltip">
+      <div style={position} className="tooltip">
         { compoent[SUGGEST_CHANGE] }
       </div>
     );
