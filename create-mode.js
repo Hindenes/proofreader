@@ -22,7 +22,7 @@ class CreateMode extends React.Component {
       <div className="text-center">
         <h1 className="header-main">1. Paste text to get started:</h1>
         <textarea className="textarea block-s" onChange={this._onTextChange}/>
-        <button className="single-action-btn edit-action-btn" onClick={this._onGetStarted}>Click to Get Started</button>
+        <button className="single-action-btn edit-action-btn" onClick={this._onGetStarted}>Next</button>
       </div>
     );
   }

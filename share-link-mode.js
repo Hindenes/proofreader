@@ -19,7 +19,7 @@ class ShareLinkMode extends React.Component {
         <p className="block-s share-link netto" onChange={this._onTextChange}>
           https://hindenes.co/proofreader/uuid
         </p>
-        <button className="single-action-btn edit-action-btn btn-center-block" onClick={this.props.onClick}>Start proofreading</button>
+        <button className="single-action-btn edit-action-btn btn-center-block" onClick={this.props.onClick}>Start proofreading and editing</button>
       </div>
     );
   }

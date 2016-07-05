@@ -62,12 +62,12 @@ class ProofreadMode extends React.Component {
     const { range } = this.state;
     const maybeTooltip = range ? <Tooltip ref="tooltip" range={range} offsetTop={-20} onNewText={this._onNewText} highlightedText={range.toString()}/> : null;
 
+    const html = this.props.textToBeEdited.split('\n').map((text, i) => `${text}<br/>`).join('');
+
     return (
       <div className="main-content">
         <h1 className="header-main">Highlight some text to start editing</h1>
-        <p id="content" className="edit-text" onMouseUp={this._onTextSelected.bind(this)} >
-          {this.props.textToBeEdited.split('\n').map((text, i) => <span key={i}>{text}<br/></span>)}
-        </p>
+        <p id="content" className="edit-text" onMouseUp={this._onTextSelected.bind(this)} dangerouslySetInnerHTML={{__html: html}}></p>
         { maybeTooltip }
       </div>
     );
